@@ -54,4 +54,7 @@
     <string name="dont_have_an_account">Belum punya akun? Daftar</string>
     <string name="login_with_linkedin_desc">Login With Linkedin</string>
     <string name="login_with_google_desc">Login With Google</string>
+    <string name="name">Nama</string>
+    <string name="have_an_account">Sudah punya akun? Masuk</string>
+    <string name="register">Daftar</string>
 </resources>

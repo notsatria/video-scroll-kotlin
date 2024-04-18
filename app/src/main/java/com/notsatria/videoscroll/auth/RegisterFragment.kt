@@ -7,10 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.notsatria.videoscroll.R
 import com.notsatria.videoscroll.databinding.FragmentLoginBinding
+import com.notsatria.videoscroll.databinding.FragmentRegisterBinding
 
-class LoginFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,15 +22,14 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnToRegister.setOnClickListener {
-            (activity as AuthActivity).navigateToRegisterFragment()
+        binding.btnToLogin.setOnClickListener {
+            (activity as AuthActivity).navigateBack()
         }
     }
-
 }

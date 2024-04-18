@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".auth.LoginFragment">
+    tools:context=".auth.RegisterFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:id="@+id/llTapAja"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="60dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -43,10 +43,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Social Community Application"
+            android:text="Daftarkan Akun dan Buat Kartu Bisnis Anda"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/llTapAja" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/name"
+            android:textColor="@color/darkBlue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSocialCommunityApplication" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameTextField"
+            style="@style/AuthTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:minHeight="54dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            app:startIconDrawable="@drawable/ic_email"
+            app:startIconTint="@color/teal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/tvEmail"
@@ -57,7 +88,7 @@
             android:text="@string/email"
             android:textColor="@color/darkBlue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSocialCommunityApplication" />
+            app:layout_constraintTop_toBottomOf="@id/nameTextField" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/emailTextField"
@@ -75,7 +106,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"/>
+                android:hint="@string/email" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,32 +138,50 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password"/>
+                android:hint="@string/password" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btnForgotPassword"
-            style="@style/Widget.Material3.Button.TextButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/llAgreement"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="40dp"
-            android:padding="0dp"
-            android:text="@string/forgot_password"
-            android:textColor="@color/darkBlue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@+id/passwordTextField">
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/cbAgreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:text="Baca syarat dan ketentuan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:clickable="true"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Di sini"
+                android:textColor="@color/darkBlue"
+                app:layout_constraintStart_toEndOf="@id/cbAgreement"
+                app:layout_constraintTop_toBottomOf="@+id/passwordTextField" />
+
+        </LinearLayout>
+
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegister"
             style="@style/AuthButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="10dp"
-            android:text="@string/login"
-            app:layout_constraintTop_toBottomOf="@+id/btnForgotPassword"
+            android:text="@string/register"
+            app:layout_constraintTop_toBottomOf="@+id/llAgreement"
             tools:layout_editor_absoluteX="40dp" />
 
         <LinearLayout
@@ -140,7 +189,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister">
 
             <View
                 android:layout_width="match_parent"
@@ -190,8 +239,8 @@
                     android:layout_height="24dp"
                     android:layout_marginHorizontal="28dp"
                     android:layout_marginVertical="10dp"
-                    android:src="@drawable/ic_google"
-                    android:contentDescription="@string/login_with_google_desc"/>
+                    android:contentDescription="@string/login_with_google_desc"
+                    android:src="@drawable/ic_google" />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -207,21 +256,21 @@
                     android:layout_height="24dp"
                     android:layout_marginHorizontal="28dp"
                     android:layout_marginVertical="10dp"
-                    android:src="@drawable/ic_linkedin"
-                    android:contentDescription="@string/login_with_linkedin_desc"/>
+                    android:contentDescription="@string/login_with_linkedin_desc"
+                    android:src="@drawable/ic_linkedin" />
 
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnToRegister"
+            android:id="@+id/btnToLogin"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:padding="0dp"
-            android:text="@string/dont_have_an_account"
+            android:text="@string/have_an_account"
             android:textColor="@color/darkBlue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -229,4 +278,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>

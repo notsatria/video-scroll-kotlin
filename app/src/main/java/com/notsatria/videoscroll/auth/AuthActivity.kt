@@ -36,4 +36,15 @@ class AuthActivity : AppCompatActivity() {
             .replace(R.id.flContainer, LoginFragment())
             .commit()
     }
+
+    fun navigateToRegisterFragment() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.flContainer, RegisterFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    fun navigateBack() {
+        onBackPressed()
+    }
 }
