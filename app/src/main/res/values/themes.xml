@@ -3,7 +3,79 @@
     <style name="Base.Theme.VideoScroll" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
     <style name="Theme.VideoScroll" parent="Base.Theme.VideoScroll" />
+
+    <style name="AuthTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxStrokeColor">@color/teal</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name="AuthButton" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:height">56dp</item>
+        <item name="android:backgroundTint">@color/teal</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="AuthIconCardButton" parent="Widget.Material3.CardView.Outlined">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="cornerRadius">10dp</item>
+    </style>
+
+    <style name="Poppins">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Poppins.Light">
+        <item name="android:fontFamily">@font/poppins_light</item>
+    </style>
+
+    <style name="Poppins.Medium">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="Poppins.SemiBold">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+
+    <style name="Poppins.Bold">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+    </style>
+
+    <style name="Poppins.Black">
+        <item name="android:fontFamily">@font/poppins_black</item>
+    </style>
+
+    <style name="Nunito">
+        <item name="android:fontFamily">@font/nunito_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Nunito.Light">
+        <item name="android:fontFamily">@font/nunito_light</item>
+    </style>
+
+    <style name="Nunito.Medium">
+        <item name="android:fontFamily">@font/nunito_medium</item>
+    </style>
+
+    <style name="Nunito.SemiBold">
+        <item name="android:fontFamily">@font/nunito_semibold</item>
+    </style>
+
+    <style name="Nunito.Bold">
+        <item name="android:fontFamily">@font/nunito_bold</item>
+    </style>
 </resources>

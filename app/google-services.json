@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "712872692255",
+    "project_id": "video-scroll-969c7",
+    "storage_bucket": "video-scroll-969c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712872692255:android:b9778691c02c79ea04a32a",
+        "android_client_info": {
+          "package_name": "com.notsatria.videoscroll"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8mkI_crPgWvNuzyvbWGPIXjLppqZUjJo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
