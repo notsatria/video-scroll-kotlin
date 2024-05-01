@@ -8,6 +8,10 @@
 
     <style name="Theme.VideoScroll" parent="Base.Theme.VideoScroll" />
 
+    <style name="circle">
+        <item name="cornerSize">50%</item>
+    </style>
+
     <style name="AuthTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusBottomEnd">16dp</item>
         <item name="boxCornerRadiusBottomStart">16dp</item>

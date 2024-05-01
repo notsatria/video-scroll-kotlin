@@ -3,30 +3,21 @@ package com.notsatria.videoscroll
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.FileProvider
-import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.viewpager2.widget.ViewPager2
-import com.firebase.ui.database.FirebaseRecyclerOptions
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.notsatria.videoscroll.auth.AuthActivity
 import com.notsatria.videoscroll.databinding.ActivityPostBinding
 import com.notsatria.videoscroll.model.User
 import java.io.ByteArrayOutputStream
-import java.io.File
 
 class PostActivity : AppCompatActivity() {
 
@@ -47,7 +38,11 @@ class PostActivity : AppCompatActivity() {
         }
 
         binding.btnGoToChat.setOnClickListener {
-            startActivity(Intent(this, ChatActivity::class.java))
+            navigate(ChatActivity::class.java)
+        }
+
+        binding.btnAccount.setOnClickListener {
+            navigate(ProfileActivity::class.java)
         }
     }
 
@@ -112,6 +107,10 @@ class PostActivity : AppCompatActivity() {
                 .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         )
         finish()
+    }
+
+    private fun navigate(activity: Class<*>) {
+        startActivity(Intent(this, activity))
     }
 
     private fun logout() {

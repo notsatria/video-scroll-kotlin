@@ -63,4 +63,5 @@
     <string name="email_and_password_must_be_filled">Email and password must be filled</string>
     <string name="select_photo">Select Photo</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="simpan_perubahan">Simpan Perubahan</string>
 </resources>

@@ -3,7 +3,6 @@ package com.notsatria.videoscroll.utils
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import com.notsatria.videoscroll.model.User
 
 object FirestoreUtil {
