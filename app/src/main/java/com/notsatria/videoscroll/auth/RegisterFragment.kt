@@ -14,6 +14,7 @@ import com.notsatria.videoscroll.R
 import com.notsatria.videoscroll.databinding.FragmentLoginBinding
 import com.notsatria.videoscroll.databinding.FragmentRegisterBinding
 import com.notsatria.videoscroll.model.User
+import com.notsatria.videoscroll.utils.FirestoreUtil
 
 class RegisterFragment : Fragment() {
 
@@ -43,6 +44,10 @@ class RegisterFragment : Fragment() {
         binding.btnRegister.setOnClickListener {
             val email = binding.emailTextField.editText!!.text.toString()
             val password = binding.passwordTextField.editText!!.text.toString()
+            if (email.isEmpty() || password.isEmpty()) {
+                showToast(getString(R.string.email_and_password_must_be_filled))
+                return@setOnClickListener
+            }
             registerWithEmailAndPassword(email, password)
         }
     }
@@ -52,7 +57,6 @@ class RegisterFragment : Fragment() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    showProgressBar(false)
                     Log.d(TAG, "createUserWithEmail:success")
                     val currentUser = auth.currentUser
                     val user = currentUser?.let {
@@ -62,7 +66,11 @@ class RegisterFragment : Fragment() {
                             binding.nameTextField.editText!!.text.toString(),
                         )
                     }
-                    (activity as AuthActivity).navigateToPostActivityWithData(user!!)
+                    FirestoreUtil.initCurrentUserIfFirstTime({
+                        showProgressBar(false)
+                        Log.d(TAG, "onComplete: User created in firestore")
+                        (activity as AuthActivity).navigateToPostActivityWithData(user!!)
+                    }, user!!)
                 } else {
                     showProgressBar(false)
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
@@ -78,6 +86,10 @@ class RegisterFragment : Fragment() {
     private fun showProgressBar(show: Boolean) {
         if (show) binding.progressBar.visibility = View.VISIBLE
         else binding.progressBar.visibility = View.GONE
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     companion object {

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "712872692255",
+    "firebase_url": "https://video-scroll-969c7-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "video-scroll-969c7",
     "storage_bucket": "video-scroll-969c7.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.notsatria.videoscroll"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "712872692255-kamq897166j19psgno7kiaaclmi79fmm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.notsatria.videoscroll",
+            "certificate_hash": "c4f817650b3f757a01999477e3fbdc561b25cd12"
+          }
+        },
+        {
+          "client_id": "712872692255-nvcvgj3fhti7fbcq35gssjd210iievjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyD8mkI_crPgWvNuzyvbWGPIXjLppqZUjJo"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712872692255-nvcvgj3fhti7fbcq35gssjd210iievjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

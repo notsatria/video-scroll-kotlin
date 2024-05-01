@@ -57,4 +57,10 @@
     <string name="name">Nama</string>
     <string name="have_an_account">Sudah punya akun? Masuk</string>
     <string name="register">Daftar</string>
+    <string name="logout">Logout</string>
+
+    <string name="web_client_id">712872692255-nvcvgj3fhti7fbcq35gssjd210iievjl.apps.googleusercontent.com</string>
+    <string name="email_and_password_must_be_filled">Email and password must be filled</string>
+    <string name="select_photo">Select Photo</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>
