@@ -29,10 +29,10 @@ object FirestoreUtil {
         }
     }
 
-    fun updateCurrentUser(name: String = "", profileUrl: String? = null) {
+    fun updateCurrentUser(name: String = "", photoUrl: String? = null) {
         val userFieldMap = mutableMapOf<String, Any>()
         if (name.isNotBlank()) userFieldMap["name"] = name
-        if (profileUrl != null) userFieldMap["profileUrl"] = profileUrl
+        if (photoUrl != null) userFieldMap["photoUrl"] = photoUrl
         currentUserDocRef.update(userFieldMap)
     }
 

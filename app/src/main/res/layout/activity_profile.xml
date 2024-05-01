@@ -13,12 +13,12 @@
         android:layout_height="150dp"
         android:layout_marginTop="50dp"
         android:background="@color/darkBlue"
-        app:contentPadding="30dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearance="@style/circle"
-        app:srcCompat="@drawable/ic_image" />
+        app:srcCompat="@drawable/ic_account" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameTextField"
@@ -35,15 +35,16 @@
         app:startIconTint="@color/teal">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name"
-            android:text=" " />
+            android:text="" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnAccount"
+        android:id="@+id/btnSaveChanges"
         style="@style/AuthButton"
         android:layout_width="match_parent"
         android:layout_height="56dp"

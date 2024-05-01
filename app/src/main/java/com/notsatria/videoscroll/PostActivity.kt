@@ -36,14 +36,6 @@ class PostActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        binding.btnGoToChat.setOnClickListener {
-            navigate(ChatActivity::class.java)
-        }
-
-        binding.btnAccount.setOnClickListener {
-            navigate(ProfileActivity::class.java)
-        }
     }
 
     private fun setupView() {
@@ -55,6 +47,14 @@ class PostActivity : AppCompatActivity() {
 
         binding.ivShare.setOnClickListener {
             shareCard()
+        }
+
+        binding.btnGoToChat.setOnClickListener {
+            navigate(ChatActivity::class.java)
+        }
+
+        binding.btnAccount.setOnClickListener {
+            navigate(ProfileActivity::class.java)
         }
     }
 

@@ -64,4 +64,5 @@
     <string name="select_photo">Select Photo</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="simpan_perubahan">Simpan Perubahan</string>
+    <string name="image_not_found">Gambar tidak ditemukan</string>
 </resources>

@@ -1,8 +1,8 @@
 [versions]
 agp = "8.3.0"
 firebaseBom = "32.8.1"
-firebaseUiDatabase = "8.0.2"
-fontawesome = "0.0.5"
+firebaseUi = "8.0.2"
+glide = "4.16.0"
 kotlin = "1.9.0"
 coreKtx = "1.12.0"
 junit = "4.13.2"
@@ -18,14 +18,17 @@ playServicesAuth = "21.1.0"
 viewpager2 = "1.0.0"
 firebaseAuthKtx = "22.3.1"
 firebaseFirestoreKtx = "24.11.1"
+firebaseStorageKtx = "20.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-viewpager2 = { module = "androidx.viewpager2:viewpager2", version.ref = "viewpager2" }
+glide-ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
 firebase-auth = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseBom" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
-firebase-ui-database = { module = "com.firebaseui:firebase-ui-database", version.ref = "firebaseUiDatabase" }
-fontawesome = { module = "info.androidhive:fontawesome", version.ref = "fontawesome" }
+firebase-ui-database = { module = "com.firebaseui:firebase-ui-database", version.ref = "firebaseUi" }
+firebase-ui-storage = { module = "com.firebaseui:firebase-ui-storage", version.ref = "firebaseUi" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -38,6 +41,7 @@ firebase-database = { group = "com.google.firebase", name = "firebase-database",
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
+firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
