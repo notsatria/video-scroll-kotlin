@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:id="@+id/messageRoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/rounded_rect_white"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="4dp">
+
+        <TextView
+            android:id="@+id/tvMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_alignParentStart="true"
+            android:maxWidth="250dp"
+            android:minWidth="120dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="@string/dont_have_an_account" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMessage"
+            android:layout_alignEnd="@id/tvMessage"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            tools:text="12:00 | 11 Jan 2022" />
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -50,7 +50,7 @@ class PostActivity : AppCompatActivity() {
         }
 
         binding.btnGoToChat.setOnClickListener {
-            navigate(ChatActivity::class.java)
+            navigate(ActiveUsersActivity::class.java)
         }
 
         binding.btnAccount.setOnClickListener {

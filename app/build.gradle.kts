@@ -69,4 +69,9 @@ dependencies {
     implementation(libs.glide)
     ksp(libs.glide.ksp)
 
+    // groupie
+    implementation(libs.groupie)
+    implementation(libs.groupie.viewmodel)
+    implementation(libs.groupie.kotlin.android.extensions)
+
 }

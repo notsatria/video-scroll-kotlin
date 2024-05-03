@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+    <RelativeLayout
+        android:id="@+id/message_root"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:background="@drawable/rounded_rect_teal">
+        <ImageView
+            android:id="@+id/ivMessageImage"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            tools:src="@drawable/ic_image" />
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivMessageImage"
+            android:layout_alignEnd="@id/ivMessageImage"
+            android:layout_marginEnd="8dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            tools:text="12:00 12 Jan 2023"/>
+    </RelativeLayout>
+</FrameLayout>

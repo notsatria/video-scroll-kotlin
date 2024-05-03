@@ -16,10 +16,17 @@
         android:theme="@style/Theme.VideoScroll"
         tools:targetApi="31">
         <activity
+            android:name=".ChatActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActiveUsersActivity" />
+        </activity>
+        <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ChatActivity"
+            android:name=".ActiveUsersActivity"
             android:exported="false" />
         <activity
             android:name=".PostActivity"

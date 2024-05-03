@@ -65,4 +65,7 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="simpan_perubahan">Simpan Perubahan</string>
     <string name="image_not_found">Gambar tidak ditemukan</string>
+    <string name="john_doe">John Doe</string>
+    <string name="john_doe_email">johndoe@email.com</string>
+    <string name="write_your_message">Write your message</string>
 </resources>

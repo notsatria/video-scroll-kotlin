@@ -19,6 +19,7 @@ viewpager2 = "1.0.0"
 firebaseAuthKtx = "22.3.1"
 firebaseFirestoreKtx = "24.11.1"
 firebaseStorageKtx = "20.3.0"
+groupie = "2.8.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +43,9 @@ firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx",
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 firebase-storage-ktx = { group = "com.google.firebase", name = "firebase-storage-ktx", version.ref = "firebaseStorageKtx" }
+groupie = { module = "com.github.lisawray.groupie:groupie", version.ref = "groupie" }
+groupie-viewmodel = { module = "com.github.lisawray.groupie:groupie-viewbinding", version.ref = "groupie" }
+groupie-kotlin-android-extensions = { module = "com.github.lisawray.groupie:groupie-kotlin-android-extensions", version.ref = "groupie" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
