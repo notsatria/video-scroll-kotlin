@@ -95,6 +95,12 @@ class ChatActivity : AppCompatActivity() {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        FirestoreUtil.removeListener(messagesListenerRegistration)
+        shouldInitRecyclerView = true
+    }
+
     private fun updateRecyclerView(messages: List<Item>) {
         fun init() {
             binding.rvChat.apply {

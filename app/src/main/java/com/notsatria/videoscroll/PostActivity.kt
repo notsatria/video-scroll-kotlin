@@ -6,55 +6,72 @@ import android.graphics.Canvas
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.notsatria.videoscroll.auth.AuthActivity
 import com.notsatria.videoscroll.databinding.ActivityPostBinding
-import com.notsatria.videoscroll.model.User
+import com.notsatria.videoscroll.datastore.WebViewPreferences
+import com.notsatria.videoscroll.viewmodel.ViewModelFactory
+import com.notsatria.videoscroll.viewmodel.WebViewViewModel
 import java.io.ByteArrayOutputStream
 
 class PostActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPostBinding
-    private lateinit var user: User
+    private lateinit var userEmail: String
+    private var dataFromWebView: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityPostBinding.inflate(layoutInflater)
         setContentView(binding.root)
         getUserData()
         setupView()
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val pref = WebViewPreferences.getInstance(context = this)
+        val viewModel =
+            ViewModelProvider(this, ViewModelFactory(pref)).get(WebViewViewModel::class.java)
+
+        viewModel.getUrl().observe(this) {
+            binding.tvDataFromWebView.text =
+                getString(R.string.data_from_webview, if (!it.isBlank()) it else "No data found")
         }
     }
 
+
     private fun setupView() {
-        showSnackBar("Welcome, ${user.email}")
+        if (intent != null) showSnackBar("Welcome, $userEmail")
 
-        binding.btnLogout.setOnClickListener {
-            logout()
-        }
+        with(binding) {
+            btnLogout.setOnClickListener {
+                logout()
+            }
 
-        binding.ivShare.setOnClickListener {
-            shareCard()
-        }
+            ivShare.setOnClickListener {
+                shareCard()
+            }
 
-        binding.btnGoToChat.setOnClickListener {
-            navigate(ActiveUsersActivity::class.java)
-        }
+            btnGoToChat.setOnClickListener {
+                navigate(ActiveUsersActivity::class.java)
+            }
 
-        binding.btnAccount.setOnClickListener {
-            navigate(ProfileActivity::class.java)
+            btnAccount.setOnClickListener {
+                navigate(ProfileActivity::class.java)
+            }
+
+            btnGoToWebView.setOnClickListener {
+                navigate(WebViewActivity::class.java)
+            }
+
+            btnGoToDropdown.setOnClickListener {
+                navigate(DropDownActivity::class.java)
+            }
         }
     }
 
@@ -90,7 +107,7 @@ class PostActivity : AppCompatActivity() {
 
 
     private fun getUserData() {
-        user = intent.getParcelableExtra(AuthActivity.EXTRA_USER)!!
+        userEmail = FirebaseAuth.getInstance().currentUser?.email.toString()
     }
 
     private fun showSnackBar(message: String) {
@@ -119,4 +136,7 @@ class PostActivity : AppCompatActivity() {
         navigateToAuthActivity()
     }
 
+    companion object {
+        const val EXTRA_DATA = "extra_data"
+    }
 }
